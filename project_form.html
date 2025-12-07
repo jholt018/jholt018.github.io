@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+      Project Form Page
+      Author: Jacob Holt
+      Date: 12/07/2025
+      Filename: project_form.html
+	  
+	  This page satisfies requirements from:
+      Tutorial 7 – Web Forms
+      Tutorial 9 – JavaScript
+   -->
+   
+   
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Jacob's Guitars | Contact & Custom Quote</title>
+   <link rel="stylesheet" href="format.css">
+   <link rel="stylesheet" href="layout.css">
+
+   <!-- Form-specific styles: focus, valid, invalid -->
+   <style>
+      form {
+         max-width: 900px;
+         margin: 0 auto;
+         background-color: #1E1E1E;
+         border: 2px solid #E86123;
+         border-radius: 10px;
+         padding: 20px 25px;
+      }
+
+      fieldset {
+         border: 2px solid #E86123;
+         margin-bottom: 20px;
+         padding: 15px 20px;
+         border-radius: 8px;
+      }
+
+      legend {
+         color: #E86123;
+         font-weight: bold;
+         text-transform: uppercase;
+      }
+
+      label {
+         display: block;
+         margin-top: 10px;
+         margin-bottom: 4px;
+      }
+
+      input,
+      select,
+      textarea {
+         width: 100%;
+         padding: 8px;
+         border-radius: 5px;
+         border: 1px solid #555;
+         background-color: #2B2B2B;
+         color: #E86123;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+         width: auto;
+         margin-right: 5px;
+      }
+
+      /* Focus styling */
+      input:focus,
+      select:focus,
+      textarea:focus {
+         outline: 2px solid #E86123;
+         border-color: #E86123;
+      }
+
+      /* Valid / invalid styling on focus */
+      input:focus:valid,
+      select:focus:valid,
+      textarea:focus:valid {
+         box-shadow: 0 0 6px #4CAF50;
+      }
+
+      input:focus:invalid,
+      select:focus:invalid,
+      textarea:focus:invalid {
+         box-shadow: 0 0 6px #FF4C4C;
+      }
+
+      .inline-group {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 15px;
+         align-items: center;
+      }
+
+      .inline-group label {
+         display: inline-block;
+         margin-top: 0;
+      }
+
+      .button-row {
+         display: flex;
+         gap: 15px;
+         justify-content: flex-end;
+         margin-top: 15px;
+      }
+
+      input[type="submit"],
+      input[type="reset"],
+      button {
+         width: auto;
+         cursor: pointer;
+         font-weight: bold;
+      }
+
+      #countdownDisplay,
+      #currentTime {
+         font-weight: bold;
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <div class="logo">
+         <img src="music_store_logo_1.png" alt="Jacob's Guitars Logo">
+      </div>
+      <h1>Contact & Custom Guitar Quote</h1>
+   </header>
+
+   <nav class="horizontal">
+      <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="project_store.html">Shop</a></li>
+         <li><a href="project_about.html">About</a></li>
+         <li><a href="project_form.html">Contact</a></li>
+      </ul>
+   </nav>
+
+   <section id="contact">
+      <h1>Tell us about your dream guitar</h1>
+
+      <!-- Tutorial 7: Form with multiple fieldsets and various inputs -->
+      <form id="quoteForm" novalidate>
+         <!-- FIELDSET 1: Customer Info -->
+         <fieldset>
+            <legend>Customer Information</legend>
+
+            <!-- Text input with validation & length -->
+            <label for="custName">Full Name (required)</label>
+            <input id="custName" name="custName" type="text"
+                   required
+                   minlength="2"
+                   maxlength="40"
+                   pattern="[A-Za-z\\s]+"
+                   placeholder="Your Name">
+
+            <!-- Mobile keyboard: email -->
+            <label for="custEmail">Email (required)</label>
+            <input id="custEmail" name="custEmail" type="email"
+                   required
+                   placeholder="you@example.com">
+
+            <!-- Mobile keyboard: phone -->
+            <label for="custPhone">Phone</label>
+            <input id="custPhone" name="custPhone" type="tel"
+                   pattern="\\d{10}"
+                   placeholder="10-digit number only">
+
+            <!-- Date/time input -->
+            <label for="visitDate">Preferred Visit Date</label>
+            <input id="visitDate" name="visitDate" type="date">
+         </fieldset>
+
+         <!-- FIELDSET 2: Gear Preferences -->
+         <fieldset>
+            <legend>Gear Preferences</legend>
+
+            <!-- Radio buttons -->
+            <p>Primary Guitar Type (required)</p>
+            <div class="inline-group">
+               <label><input type="radio" name="guitarType" value="Electric" required> Electric</label>
+               <label><input type="radio" name="guitarType" value="Acoustic"> Acoustic</label>
+               <label><input type="radio" name="guitarType" value="Hybrid"> Hybrid</label>
+            </div>
+
+            <!-- Spinner / number input -->
+            <label for="budget">Budget (USD) - Spinner</label>
+            <input id="budget" name="budget" type="number"
+                   min="200"
+                   max="10000"
+                   step="50"
+                   value="1500">
+
+            <!-- Range slider -->
+            <label for="experience">Experience Level (1 = Beginner, 10 = Professional)</label>
+            <input id="experience" name="experience" type="range"
+                   min="1" max="10" value="5"
+                   oninput="document.getElementById('expOutput').textContent = this.value;">
+            <p>Selected level: <span id="expOutput">5</span></p>
+
+            <!-- Checkboxes -->
+            <p>Accessories Interested In:</p>
+            <div class="inline-group">
+               <label><input type="checkbox" name="accPedals" value="Pedals"> Pedals</label>
+               <label><input type="checkbox" name="accAmp" value="Amp"> Amp</label>
+               <label><input type="checkbox" name="accCase" value="Case"> Case</label>
+               <label><input type="checkbox" name="accCables" value="Cables"> Cables</label>
+            </div>
+
+            <!-- Datalist -->
+            <label for="favBrand">Favorite Brand (datalist)</label>
+            <input id="favBrand" name="favBrand" list="brandList" placeholder="Start typing a brand">
+            <datalist id="brandList">
+               <option value="Fender">
+               <option value="Gibson">
+               <option value="Taylor">
+            </datalist>
+
+            <!-- Selection list -->
+            <label for="refSource">How did you hear about us?</label>
+            <select id="refSource" name="refSource">
+               <option value="">-- Please select --</option>
+               <option value="Friend">Word of Mouth</option>
+               <option value="Social">Social Media</option>
+               <option value="Search">Google</option>
+               <option value="WalkIn">Local Ad</option>
+            </select>
+         </fieldset>
+
+         <!-- FIELDSET 3: Additional Info -->
+         <fieldset>
+            <legend>Notes & Special Requests</legend>
+
+            <!-- Textarea with length requirements -->
+            <label for="notes">Tell us more (max 300 characters)</label>
+            <textarea id="notes" name="notes" rows="5"
+                      maxlength="300"
+                      placeholder="Tell us about your playing style, favorite artists, or any custom requests."></textarea>
+         </fieldset>
+
+         <!-- Tutorial 9: Time, countdown, etc. display -->
+         <fieldset>
+            <legend>Extras (JavaScript Features)</legend>
+            <p>Current day &amp; time: <span id="currentTime">Loading...</span></p>
+
+            <p>Sale countdown (10 seconds demo): <span id="countdownDisplay">Not started</span></p>
+            <button type="button" id="startCountdownBtn">Start Countdown</button>
+         </fieldset>
+
+         <!-- Submit & Reset buttons -->
+         <div class="button-row">
+            <input type="reset" value="Cancel / Reset">
+            <input type="submit" value="Submit Quote Request">
+         </div>
+      </form>
+   </section>
+
+   <footer>
+      <p>&copy; 2025 Jacob's Guitars — Hickory, NC</p>
+   </footer>
+
+   <!-- Tutorial 9 JavaScript file -->
+   <script src="project_form.js"></script>
+</body>
+</html>

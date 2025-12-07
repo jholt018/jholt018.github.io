@@ -6,7 +6,7 @@ css
 	*/
 	
 	/* Global Styles */
-	
+	/* Tutorial 2: Background and text formatting */
 	body {
 		font-family: 'Bebas Neue', 'Oswald', Arial, sans-serif;
 		background-color: #2B2B2B;
@@ -16,6 +16,7 @@ css
 		}
 
 	/* Header and Logo*/
+	/* Tutorial 3: Block-level layout using header */
 	header {
 	background-color: #2B2B2B;
 	text-align: center;
@@ -35,6 +36,7 @@ css
 	}
 	
 	   /* Navigation Bar */
+	   /* Tutorial 2: Formatting lists and links */
 	nav.horizontal {
 	   background-color: #2B2B2B;
 	   text-align: center;
@@ -51,7 +53,7 @@ css
 	   gap: 40px;
 	}
 
-
+    /* Tutorial 2: Contextual selector nav.horizontal a */
 	nav.horizontal a {
 	   text-decoration: none;
 	   color: #E86123;
@@ -62,6 +64,9 @@ css
 	nav.horizontal a:focus {
 	   color: #E86123;
 	}
+	
+	/* Section Styling */
+    /* Tutorial 3: Block-level sections */
 	section {
 	   background-color: #2B2B2B;
 	   padding: 40px 20px;
@@ -71,6 +76,11 @@ css
    color: #E86123;
    text-transform: uppercase;
 	}
+	/* Tutorial 2: Pseudo-element ::first-line */
+	section h1::first-line {
+		letter-spacing: 2px;
+}
+
    section img {
 	   max-width: 100%;
 	   height: auto;
@@ -78,15 +88,34 @@ css
    section p{
 	   color: #E86123;
    }
+   
+    /* Store item text color */
 	.item{
 		color: #E86123;
 	}
 	
+	/* Footer */
+    /* Tutorial 1: Footer formatting with character reference used in HTML */
 	footer {
    background-color: #2B2B2B !important;
    color: #E86123 !important;
    text-align: center;
    padding: 15px 0;
    border-top: 1px solid #E86123;
+	}	
+	
+	/* Tutorial 2: Attribute selectors for form inputs */
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"] {
+	   border-color: #555;
 	}
-		
+
+	/* Tutorial 2: Pseudo-classes for hypertext links */
+	nav.horizontal a:link {
+	   color: #E86123;
+	}
+
+	nav.horizontal a:visited {
+	   color: #E86123;
+	}
