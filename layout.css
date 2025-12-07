@@ -1,0 +1,61 @@
+/*
+   Jacob's Guitars - layout.css
+   Author: Jacob Holt
+   Date: 10/31/2025
+*/
+
+.logo {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+header img {
+   max-width: 140px;
+   height: auto;
+}
+}
+.float-left {
+   float: left;
+   width: 250px;
+   margin: 0 20px 20px 0;
+}
+
+.store-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 30px;
+   text-align: center;
+}
+
+.store-grid .item {
+   background-color: #1E1E1E;
+   border: 2px solid #E86123;
+   border-radius: 10px;
+   padding: 20px;
+   position: relative;
+}
+
+.store-grid .item img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 8px;
+   overflow: hidden;
+}
+
+@media screen and (max-width: 780px) {
+   nav.horizontal ul {
+      flex-direction: column;
+      gap: 15px;
+   }
+
+   .float-left {
+      float: none;
+      display: block;
+      margin: 0 auto 20px auto;
+   }
+
+   .store-grid {
+      grid-template-columns: 1fr;
+   }
+}
