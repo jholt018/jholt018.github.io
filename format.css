@@ -119,3 +119,114 @@ css
 	nav.horizontal a:visited {
 	   color: #E86123;
 	}
+	form, 
+	 form label,
+	 form p,
+	 form legend,
+	 form h1,
+	 form span {
+		 color: #E86123;
+		}
+
+      form {
+         max-width: 900px;
+         margin: 0 auto;
+         background-color: #1E1E1E;
+         border: 2px solid #E86123;
+         border-radius: 10px;
+         padding: 20px 25px;
+      }
+
+      fieldset {
+         border: 2px solid #E86123;
+         margin-bottom: 20px;
+         padding: 15px 20px;
+         border-radius: 8px;
+      }
+
+      legend {
+         color: #E86123;
+         font-weight: bold;
+         text-transform: uppercase;
+      }
+
+      label {
+         display: block;
+         margin-top: 10px;
+         margin-bottom: 4px;
+      }
+
+      input,
+      select,
+      textarea {
+         width: 100%;
+         padding: 8px;
+         border-radius: 5px;
+         border: 1px solid #555;
+         background-color: #2B2B2B;
+         color: #E86123;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+         width: auto;
+         margin-right: 5px;
+      }
+
+      /* Focus styling */
+      input:focus,
+      select:focus,
+      textarea:focus {
+         outline: 2px solid #E86123;
+         border-color: #E86123;
+      }
+
+      /* Valid / invalid styling on focus */
+      input:focus:valid,
+      select:focus:valid,
+      textarea:focus:valid {
+         box-shadow: 0 0 6px #4CAF50;
+      }
+
+      input:focus:invalid,
+      select:focus:invalid,
+      textarea:focus:invalid {
+         box-shadow: 0 0 6px #FF4C4C;
+      }
+	  input::placeholder,
+	  textarea::placeholder {
+		color: #E86123AA;
+	  }
+
+
+      .inline-group {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 15px;
+         align-items: center;
+      }
+
+      .inline-group label {
+         display: inline-block;
+         margin-top: 0;
+      }
+
+      .button-row {
+         display: flex;
+         gap: 15px;
+         justify-content: flex-end;
+         margin-top: 15px;
+      }
+
+      input[type="submit"],
+      input[type="reset"],
+      button {
+         width: auto;
+         cursor: pointer;
+         font-weight: bold;
+      }
+
+      #countdownDisplay,
+      #currentTime {
+         font-weight: bold;
+      }
