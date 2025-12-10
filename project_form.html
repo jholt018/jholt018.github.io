@@ -6,20 +6,17 @@
       Author: Jacob Holt
       Date: 12/07/2025
       Filename: project_form.html
-	  
-	  This page satisfies requirements from:
+      
+      This page satisfies requirements from:
       Tutorial 7 – Web Forms
       Tutorial 9 – JavaScript
    -->
-   
    
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Jacob's Guitars | Contact & Custom Quote</title>
    <link rel="stylesheet" href="format.css">
    <link rel="stylesheet" href="layout.css">
-
-      
 </head>
 
 <body>
@@ -44,19 +41,19 @@
 
       <!-- Tutorial 7: Form with multiple fieldsets and various inputs -->
       <form id="quoteForm">
+
          <!-- FIELDSET 1: Customer Info -->
          <fieldset>
             <legend>Customer Information</legend>
 
             <!-- Text input with validation & length -->
             <label for="custName">Full Name (required)</label>
-			<input id="custName" name="custName" type="text"
-				   required
-				   minlength="2"
-				   maxlength="40"
-				   pattern="[A-Za-z]+(\s[A-Za-z]+)+"
-				   placeholder="First Last">
-
+            <input id="custName" name="custName" type="text"
+                   required
+                   minlength="2"
+                   maxlength="40"
+                   pattern="[A-Za-z]+(\s[A-Za-z]+)+"
+                   placeholder="First Last">
 
             <!-- Mobile keyboard: email -->
             <label for="custEmail">Email (required)</label>
@@ -65,12 +62,12 @@
                    placeholder="you@example.com">
 
             <!-- Mobile keyboard: phone -->
-            <label for="custPhone">Phone</label>
+            <label for="custPhone">Phone Number (optional)</label>
             <input id="custPhone" name="custPhone" type="tel"
-                   pattern="\\d{10}"
-                   placeholder="10-digit number only">
+                   pattern="^(\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{4})$"
+                   placeholder="828-555-1234">
 
-            <!-- Date/time input -->
+            <!-- Date/time Input -->
             <label for="visitDate">Preferred Visit Date</label>
             <input id="visitDate" name="visitDate" type="date">
          </fieldset>
@@ -79,7 +76,7 @@
          <fieldset>
             <legend>Gear Preferences</legend>
 
-            <!-- Radio buttons -->
+            <!-- Radio Buttons -->
             <p>Primary Guitar Type (required)</p>
             <div class="inline-group">
                <label><input type="radio" name="guitarType" value="Electric" required> Electric</label>
@@ -112,20 +109,20 @@
             </div>
 
             <!-- Datalist -->
-            <label for="favBrand">Favorite Brand </label>
+            <label for="favBrand">Favorite Brand</label>
             <input id="favBrand" name="favBrand" list="brandList" placeholder="Start typing a brand">
             <datalist id="brandList">
                <option value="Fender">
                <option value="Gibson">
                <option value="Taylor">
-			   <option value="PRS">
-			   <option value="Ibanez">
-			   <option value="Jackson">
-			   <option value="Martin">
-			   <option value="Gretsch">
-			   <option value="Epiphone">
-			   <option value="Yamaha">
-			   <option value="Schecter">
+               <option value="PRS">
+               <option value="Ibanez">
+               <option value="Jackson">
+               <option value="Martin">
+               <option value="Gretsch">
+               <option value="Epiphone">
+               <option value="Yamaha">
+               <option value="Schecter">
             </datalist>
 
             <!-- Selection list -->
@@ -142,7 +139,6 @@
          <!-- FIELDSET 3: Additional Info -->
          <fieldset>
             <legend>Notes & Special Requests</legend>
-
             <!-- Textarea with length requirements -->
             <label for="notes">Tell us more (max 300 characters)</label>
             <textarea id="notes" name="notes" rows="5"
@@ -152,14 +148,15 @@
 
          <!-- Tutorial 9: Time, countdown, etc. display -->
          <fieldset>
-            <legend>Extras </legend>
+            <legend>Extras</legend>
+
             <p>Current day &amp; time: <span id="currentTime">Loading...</span></p>
 
             <p>Sale countdown: <span id="countdownDisplay">Not started</span></p>
             <button type="button" id="startCountdownBtn">Start Countdown</button>
          </fieldset>
 
-         <!-- Submit & Reset buttons -->
+         <!-- Buttons -->
          <div class="button-row">
             <input type="reset" value="Cancel / Reset">
             <input type="submit" value="Submit Quote Request">
@@ -170,7 +167,6 @@
    <footer>
       <p>&copy; 2025 Jacob's Guitars — Hickory, NC</p>
    </footer>
-
    <!-- Tutorial 9 JavaScript file -->
    <script src="project_form.js"></script>
 </body>
