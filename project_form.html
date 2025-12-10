@@ -50,12 +50,13 @@
 
             <!-- Text input with validation & length -->
             <label for="custName">Full Name (required)</label>
-            <input id="custName" name="custName" type="text"
-                   required
-                   minlength="2"
-                   maxlength="40"
-                   pattern="[A-Za-z\\s]+"
-                   placeholder="Your Name">
+			<input id="custName" name="custName" type="text"
+				   required
+				   minlength="2"
+				   maxlength="40"
+				   pattern="[A-Za-z]+(\s[A-Za-z]+)+"
+				   placeholder="First Last">
+
 
             <!-- Mobile keyboard: email -->
             <label for="custEmail">Email (required)</label>
