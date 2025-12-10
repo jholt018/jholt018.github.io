@@ -203,9 +203,9 @@
                    value="1500">
 
             <!-- Range slider -->
-            <label for="experience">Experience Level (1 = Beginner, 10 = Professional)</label>
+            <label for="experience">Experience Level (1 = Beginner, 2 = Intermediate, 3 = Professional)</label>
             <input id="experience" name="experience" type="range"
-                   min="1" max="10" value="5"
+                   min="1" max="3" value="1"
                    oninput="document.getElementById('expOutput').textContent = this.value;">
             <p>Selected level: <span id="expOutput">5</span></p>
 
@@ -225,6 +225,14 @@
                <option value="Fender">
                <option value="Gibson">
                <option value="Taylor">
+			   <option value="PRS">
+			   <option value="Ibanez">
+			   <option value="Jackson">
+			   <option value="Martin">
+			   <option value="Gretsch">
+			   <option value="Epiphone">
+			   <option value="Yamaha">
+			   <option value="Schecter">
             </datalist>
 
             <!-- Selection list -->
@@ -254,7 +262,7 @@
             <legend>Extras (JavaScript Features)</legend>
             <p>Current day &amp; time: <span id="currentTime">Loading...</span></p>
 
-            <p>Sale countdown (10 seconds demo): <span id="countdownDisplay">Not started</span></p>
+            <p>Sale countdown: <span id="countdownDisplay">Not started</span></p>
             <button type="button" id="startCountdownBtn">Start Countdown</button>
          </fieldset>
 
